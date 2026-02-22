@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: "Star Plus Foods",
     images: [
       {
-        url: "/og-image.jpg", // You should add this image to public folder
+        url: "/star-plus/Star-plus1.jpeg",
         width: 1200,
         height: 630,
         alt: "Star Plus Foods Premium Branding",
@@ -47,7 +47,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Star Plus Foods | Premium Food Brand",
     description: "Premium food products, coming soon. Sign up for early access.",
-    images: ["/og-image.jpg"],
+    images: ["/star-plus/Star-plus1.jpeg"],
+  },
+  icons: {
+    icon: "/star-plus/Star-plus1.jpeg",
+    apple: "/star-plus/Star-plus1.jpeg",
   },
   robots: {
     index: true,
