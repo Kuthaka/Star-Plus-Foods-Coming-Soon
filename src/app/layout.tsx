@@ -13,8 +13,69 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Star Plus Foods | Coming Soon",
-  description: "Experience the premium taste of Star Plus Foods. Coming soon to your table.",
+  title: "Star Plus Foods | Premium Quality Food Products - Coming Soon",
+  description: "Experience the premium taste of Star Plus Foods. We are launching a curated range of high-quality food products. Join our waitlist for exclusive updates.",
+  keywords: [
+    "Star Plus Foods",
+    "premium food products",
+    "gourmet food",
+    "quality spices",
+    "healthy ingredients",
+    "luxury food brand",
+    "coming soon",
+    "food subscription",
+    "high-quality groceries"
+  ],
+  authors: [{ name: "Star Plus Foods Team" }],
+  openGraph: {
+    title: "Star Plus Foods | Premium Quality Food Products",
+    description: "The gold standard in premium food products. Coming soon to your table.",
+    url: "https://starplusfoods.com",
+    siteName: "Star Plus Foods",
+    images: [
+      {
+        url: "/og-image.jpg", // You should add this image to public folder
+        width: 1200,
+        height: 630,
+        alt: "Star Plus Foods Premium Branding",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Star Plus Foods | Premium Food Brand",
+    description: "Premium food products, coming soon. Sign up for early access.",
+    images: ["/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Star Plus Foods",
+  "url": "https://starplusfoods.com",
+  "logo": "https://starplusfoods.com/logo.png",
+  "description": "Premium quality food products for a healthier lifestyle.",
+  "potentialAction": {
+    "@type": "SubscribeAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://starplusfoods.com/#subscribe"
+    }
+  }
 };
 
 export default function RootLayout({
@@ -27,6 +88,10 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} antialiased bg-black text-white selection:bg-rose-500 selection:text-white`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
       </body>
     </html>
